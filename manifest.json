@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Ultimate Link Safety Checker",
+  "version": "1.0",
+  "description": "Check suspicious links in a safe popup with advanced analysis.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Link Safety Checker"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "storage"
+  ]
+}

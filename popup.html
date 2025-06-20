@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ultimate Link Safety Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f7f7f7;
+      padding: 35px;
+      width: 560px;
+      height: 400px;
+      overflow-y: auto;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #121212;
+      color: #eee;
+    }
+    .container {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark .container {
+      background: #1e1e1e;
+      color: #eee;
+    }
+    footer {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 15px;
+      color: gray;
+    }
+    body.dark footer {
+      color: #aaa;
+    }
+    #qrCode {
+      margin-top: 10px;
+    }
+    .history-item {
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 5px;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+    .history-item:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    body.dark .history-item:hover {
+      background-color: #3399ff;
+    }
+    #spinner {
+      display: none;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h4>🔍 Ultimate Link Safety Checker</h4>
+    <input class="form-control" type="text" id="linkInput" placeholder="Enter suspicious link" autocomplete="off" />
+    <div class="mt-2">
+      <button id="checkBtn" class="btn btn-danger btn-sm">Check</button>
+      <button id="copyBtn" class="btn btn-secondary btn-sm ms-1" title="Copy link">Copy</button>
+      <button id="resetBtn" class="btn btn-warning btn-sm ms-1" title="Reset">Reset</button>
+      <button id="darkModeBtn" class="btn btn-info btn-sm ms-1" title="Toggle Dark Mode">Dark Mode</button>
+    </div>
+    <div id="result" class="mt-3" style="white-space: pre-wrap; font-size: 13px;"></div>
+    <hr />
+    <h6>🔄 History (click to load)</h6>
+    <div id="history" style="max-height:120px; overflow-y:auto;"></div>
+    <iframe id="hiddenFrame" sandbox="allow-same-origin allow-scripts"></iframe>
+  </div>
+  <footer>Built for awareness, not forensics.Always double check</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
